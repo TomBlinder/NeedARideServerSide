@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>NeedARideServerSide</servlet-name>
+		<servlet-class>com.serverSide.NeedARideServerSideServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>AddNewRide</servlet-name>
+		<servlet-class>com.serverSide.AddNewRide</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>SearchSimilarRides</servlet-name>
+		<servlet-class>com.serverSide.SearchSimilarRides</servlet-class>
+	</servlet>
+	
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>NeedARideServerSide</servlet-name>
+		<url-pattern>/needarideserverside</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AddNewRide</servlet-name>
+		<url-pattern>/addnewride</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SearchSimilarRides</servlet-name>
+		<url-pattern>/searchsimilarrides</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<security-constraint>
+	    <web-resource-collection>
+	        <web-resource-name>profile</web-resource-name>
+	        <url-pattern>/*</url-pattern>
+	    </web-resource-collection>
+	    <user-data-constraint>
+	        <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+	    </user-data-constraint>
+	</security-constraint>
+</web-app>
