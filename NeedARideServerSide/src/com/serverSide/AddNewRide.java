@@ -60,14 +60,14 @@ public class AddNewRide extends HttpServlet {
 	ride.setProperty("fromStreet", fromStreet);
 	ride.setProperty("fromCity",fromCity);
 	ride.setProperty("fromHouseNo",fromHouseNo);
-	ride.setProperty("fromLat",fromHouseNo);
-	ride.setProperty("fromLng",fromHouseNo);
+	ride.setProperty("fromLat",fromLat);
+	ride.setProperty("fromLng",fromLng);
 	
 	ride.setProperty("toStreet", toStreet);
 	ride.setProperty("toCity", toCity);
 	ride.setProperty("toHouseNo",toHouseNo);
-	ride.setProperty("toLat",fromHouseNo);
-	ride.setProperty("toLng",fromHouseNo);
+	ride.setProperty("toLat",toLat);
+	ride.setProperty("toLng",toLng);
 	
 	ride.setProperty("date", date);
 	ride.setProperty("availableSits",availableSits);
