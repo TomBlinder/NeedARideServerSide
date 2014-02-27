@@ -24,24 +24,23 @@ public class SearchSimilarRides extends HttpServlet{
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		
 		//getting the known parameters
-		String from = req.getParameter("from");
-		String to = req.getParameter("to");
-		String date = req.getParameter("date");
+		String from = req.getParameter("fromCity");
+		String to = req.getParameter("toCity");
 		
 		//write back to the user the output of the function "check" as response
-		resp.getWriter().println(check(from,to,date));
+		resp.getWriter().println(check(from,to));
 	}
 	
-	public String check(String from, String to, String date){
+	public String check(String fromCity, String toCity){
 		
 		//set the datastore mechanism for searching the request values
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		
 		//set a filter for the "from" property
-		Filter filterFrom = new FilterPredicate("from",FilterOperator.IN,from);
+		Filter filterFrom = new FilterPredicate("fromCity",FilterOperator.IN,fromCity);
 		
 		//set a filter for the "to" property
-		Filter filterTo = new FilterPredicate("to",FilterOperator.IN,from);
+		Filter filterTo = new FilterPredicate("toCity",FilterOperator.IN,toCity);
 		
 		//combine the to filters with "and" operator
 		Filter filterFromAndTo = CompositeFilterOperator.and(filterFrom,filterTo);
